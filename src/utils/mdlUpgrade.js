@@ -3,11 +3,11 @@ import React from 'react';
 export default (Component) => {
     class MDLUpgradedComponent extends React.Component {
         componentDidMount() {
-            componentHandler.upgradeElement(React.findDOMNode(this));
+            componentHandler.upgradeDom();
         }
 
         componentWillUnmount() {
-            componentHandler.downgradeElements(React.findDOMNode(this));
+            componentHandler.upgradeDom();
         }
 
         render() {
