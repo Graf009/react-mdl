@@ -11,7 +11,7 @@ class ProgressBar extends React.Component {
 
     componentDidMount(){
         // Can't use the mdlUpgrade component because we need access to the Material internal object
-        componentHandler.upgradeElement(React.findDOMNode(this));
+        componentHandler.upgradeDom();
         this.setProgress(this.props.progress);
         this.setBuffer(this.props.buffer);
     }
@@ -22,7 +22,7 @@ class ProgressBar extends React.Component {
     }
 
     componentWillUnmount(){
-        componentHandler.downgradeElements(React.findDOMNode(this));
+        componentHandler.upgradeDom();
     }
 
     setProgress(progress) {
